@@ -1,2 +1,2 @@
 # csci318-project
-Repo for project for CSCI318
+Repo for project for CSCI318 Online Ordering Application
