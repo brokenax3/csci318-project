@@ -1,24 +1,51 @@
 package com.csci318project.onlineordering.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Customer")
 public class Customer {
 
-    private final String companyName;
-    private final String address;
-    private final String country;
+    @Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "company_name")
+    private String companyName;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "country")
+    private String country;
+
+    @OneToOne(mappedBy = "customer")
     private Contact contact;
 
+    public Customer() {};
 
-    public Customer(String companyName, String address, String country, Contact contact) {
+
+    public Customer(long id, String companyName, String address, String country, Contact contact) {
+        this.id = id;
         this.companyName = companyName;
         this.address = address;
         this.country = country;
         this.contact = contact;
     }
 
-    public Customer(String companyName, String address, String country) {
+    public Customer(long id, String companyName, String address, String country) {
+        this.id = id;
         this.companyName = companyName;
         this.address = address;
         this.country = country;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getCompanyName() {

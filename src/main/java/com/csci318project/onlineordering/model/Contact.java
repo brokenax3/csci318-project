@@ -1,16 +1,65 @@
 package com.csci318project.onlineordering.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Contact")
 public class Contact {
 
-    private final String name;
-    private final String phone;
-    private final String email;
-    private final String position;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-    public Contact(String name, String phone, String email, String position) {
+    @Column(name = "contact_name")
+    private String name;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "contact_position")
+    private String position;
+
+    @OneToOne
+    @JoinColumn(name = "customer_id")
+    @JsonIgnore
+    private Customer customer;
+
+    public Contact() {};
+
+    public Contact(long id, String name, String phone, String email, String position) {
+        this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.position = position;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public  void setPosition(String position) {
         this.position = position;
     }
 
