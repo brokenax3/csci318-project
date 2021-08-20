@@ -38,12 +38,12 @@ public class ContactController {
         return contactRepository.save(contact);
     }
 
-    @PutMapping("/delete/{id}")
+    @DeleteMapping("{id}")
     void deleteContactById(@PathVariable long id) {
         contactRepository.deleteById(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("{id}")
     Contact updateContactById(@PathVariable long id, @RequestBody Contact contact){
 
         Contact updatedContact = contactRepository.findById(id).map(old -> {

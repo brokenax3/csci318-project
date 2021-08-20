@@ -10,7 +10,7 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "company_name")
+    @Column(name = "companyName")
     private String companyName;
 
     @Column(name = "address")

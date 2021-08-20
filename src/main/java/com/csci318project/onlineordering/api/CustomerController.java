@@ -38,12 +38,12 @@ public class CustomerController {
         return customerRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
-    @GetMapping("?search={companyName}")
-    List<Customer> getCutomerByCompanyName(@PathVariable String companyName) {
+    @GetMapping(value = "company")
+    List<Customer> getCutomerByCompanyName(@RequestParam("name") String companyName) {
         return customerRepository.findByCompanyName(companyName);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("{id}")
     Customer updateCustomer(@PathVariable long id, @NonNull @RequestBody Customer newCustomer) {
         Customer customer = customerRepository.findById(id).map(old -> new Customer(id, newCustomer.getCompanyName(), newCustomer.getAddress(), newCustomer.getCountry(), old.getContact()))
                 .orElseThrow(RuntimeException::new);
