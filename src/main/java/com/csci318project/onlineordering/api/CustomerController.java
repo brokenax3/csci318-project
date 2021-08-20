@@ -39,7 +39,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "company")
-    List<Customer> getCutomerByCompanyName(@RequestParam("name") String companyName) {
+    List<Customer> getCustomerByCompanyName(@RequestParam("name") String companyName) {
         return customerRepository.findByCompanyName(companyName);
     }
 

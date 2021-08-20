@@ -1,12 +1,133 @@
-# csci318-project
-Repo for project for CSCI318 Online Ordering Application
+---
+title: CSCI318 - Task 1
+mainfont: IBMPlexSerif
+monofont: Iosevka SS02
+---
 
-# Dependencies
+$\pagebreak$
+
+# CSCI318 - Task 1
+<!-- # csci318-project -->
+<!-- Repo for project for CSCI318 Online Ordering Application -->
+
+## Dependencies
 - Spring Boot 2.5.3
 - Java 8
 - Spring Web
 - Spring Data JPA
 - H2
+
+## Building
+```bash
+cd csci318-project && mvn clean build
+```
+
+## Running
+```bash
+java -jar ./target/online-ordering-0.0.1-SNAPSHOT.jar
+```
+
+# Description of the project
+
+## Structure
+```bash
+$ tree -A ./src/
+./src/
+├── main
+│   ├── java
+│   │   └── com
+│   │       └── csci318project
+│   │           └── onlineordering
+│   │               ├── api
+│   │               │   ├── ContactController.java
+│   │               │   └── CustomerController.java
+│   │               ├── model
+│   │               │   ├── Contact.java
+│   │               │   └── Customer.java
+│   │               ├── OnlineOrderingApplication.java
+│   │               └── repository
+│   │                   ├── ContactRepository.java
+│   │                   └── CustomerRepository.java
+│   └── resources
+│       ├── application.properties
+│       ├── static
+│       └── templates
+└── test
+    └── java
+        └── com
+            └── csci318project
+                └── onlineordering
+                    └── OnlineOrderingApplicationTests.java
+```
+
+The onlineordering application is split into api, model and repository.
+
+The API Layer consists of the ContactController and the CustomerController class which interfaces with the REST Requests (GET, POST, PUT and DELETE). This API Layer interacts with the Service Layer with domain models underneath it. The project has two models, Customer and Contact. In addition, the Service Layer interacts with the repository interfaces which is the Datat Access Layer for this task.
+
+## API Layer
+There are two classes in the API Layer, ContactController and CustomerController. ContactController accepts REST Requests with the path set to '/contact'. This class handles REST Requests and has the following functionality:
+
+- getAllContact()
+    - Returns all the contacts stored in the database.
+- getContactById()
+    - Returns the contact stored in the database which matches the "{id}" specified in the request. 
+- addContact()
+    - Returns the new contact after accepting a JSON body which takes these following keys:
+        - name
+        - phone
+        - email
+        - position
+- deleteContactById()
+    - Deletes the contact specified by "{id}" in the database.
+- updateContactById()
+    - Accepts a JSON body which is similar to addContact() and updates the contact in the database which matches the specified "{id}". The function returns the updated contact.
+
+The CustomerController class accepts REST requests with the path '/customer' and has the following functionality:
+
+- getAllCustomer()
+    - Returns all the customers stored in the database.
+- addCustomer()
+    - Returns the new customer after accepting a JSON body which takes in the following keys:
+        - companyName
+        - address
+        - country
+- getCustomerById()
+    - Returns the customer which matches the "{id}" specified.
+- getCustomerByCompanyName()
+    - Requires the path '/customer/company' and the search param 'name'.
+    - Returns the customer which matches the search parameter.
+- updateCustomer()
+    - Accepts a JSON body similar to addCustomer() and updates the customer in the database which matches the "{id}" specified in the path.
+- addCustomerContact()
+    - Links an existing customer with a contact which exists in the database.
+    - Requires specifying with '/customer/{id}/contact/{contactId}'
+    - Returns the updated customer.
+
+## Service Layer
+In the Customer Domain, two models created for this task, Customer and Contact.
+
+A Customer model has the following variables:
+
+- companyName
+- address
+- country
+- contact
+
+A Contact model has the following variables:
+
+- name
+- phone
+- email
+- position
+- customer
+
+## Data Access Layer
+The repositories for this task extends on the JpaRepository from the Spring framework. Thus, the default function such as save(), findById() and delete() are used.
+
+The CustomerRepository has an extra definition which enables the application to search the database when provided the search term. This is implemented as the function findByCompanyName() and returns a List of the matches.
+
+## Database
+The project currently uses the H2 in memory database.
 
 # Examples of Input and Output
 
