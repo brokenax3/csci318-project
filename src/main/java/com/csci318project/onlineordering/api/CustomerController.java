@@ -34,8 +34,13 @@ public class CustomerController {
     }
 
     @GetMapping("{id}")
-    Customer getCustomerById(@PathVariable long id){
+    Customer getCustomerById(@PathVariable long id) {
         return customerRepository.findById(id).orElseThrow(RuntimeException::new);
+    }
+
+    @GetMapping("?search={companyName}")
+    List<Customer> getCutomerByCompanyName(@PathVariable String companyName) {
+        return customerRepository.findByCompanyName(companyName);
     }
 
     @PutMapping("/update/{id}")
@@ -50,7 +55,8 @@ public class CustomerController {
         Customer customer = customerRepository.findById(id).orElseThrow(RuntimeException::new);
         Contact contact = contactRepository.findById(contactId).orElseThrow(RuntimeException::new);
         customer.setContact(contact);
-        return customerRepository.save(customer);
+        contact.setCustomer(customer);
+        return customerRepository.saveAndFlush(customer);
     }
 
 }

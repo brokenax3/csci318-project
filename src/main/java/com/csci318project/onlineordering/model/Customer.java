@@ -40,8 +40,8 @@ public class Customer {
         this.country = country;
     }
 
-    public void setContact(Contact contact) {
-        this.contact = contact;
+    public void setContact(Contact newContact) {
+        this.contact = newContact;
     }
 
     public long getId() {

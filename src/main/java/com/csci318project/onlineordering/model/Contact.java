@@ -39,6 +39,10 @@ public class Contact {
         this.position = position;
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public Customer getCustomer() {
         return customer;
     }
@@ -47,7 +51,7 @@ public class Contact {
         return id;
     }
 
-    public void setName(String name) {
+/*    public void setName(String name) {
         this.name = name;
     }
 
@@ -61,7 +65,7 @@ public class Contact {
 
     public  void setPosition(String position) {
         this.position = position;
-    }
+    }*/
 
     public String getName() {
         return name;
