@@ -45,7 +45,7 @@ public class CustomerController {
 
     @PutMapping("/update/{id}")
     Customer updateCustomer(@PathVariable long id, @NonNull @RequestBody Customer newCustomer) {
-        Customer customer = customerRepository.findById(id).map(old -> new Customer(old.getId(), newCustomer.getCompanyName(), newCustomer.getAddress(), newCustomer.getCountry(), newCustomer.getContact()))
+        Customer customer = customerRepository.findById(id).map(old -> new Customer(id, newCustomer.getCompanyName(), newCustomer.getAddress(), newCustomer.getCountry(), old.getContact()))
                 .orElseThrow(RuntimeException::new);
         return customerRepository.save(customer);
     }
