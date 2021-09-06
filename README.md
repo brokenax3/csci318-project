@@ -148,7 +148,6 @@ curl -X POST -H "Content-Type:application/json" -d \
 "id":1,"companyName":"Microsoft","address":"Redmond","country":"USA","contact":null}
 ```
 
-
 ### Request 2: Creating a new contact entry.
 - Input:
 ```bash
