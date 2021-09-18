@@ -14,8 +14,8 @@ public class Product {
     @Column(name = "productCategory")
     private String productCategory;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "productName")
+    private String productName;
 
     @Column(name = "price")
     private long price;
@@ -28,10 +28,10 @@ public class Product {
 
     public Product() {}
 
-    public Product(long id, String productCategory, String name, long price, long stockQuantity, ProductDetail productDetail) {
+    public Product(long id, String productCategory, String productName, long price, long stockQuantity, ProductDetail productDetail) {
         this.id = id;
         this.productCategory = productCategory;
-        this.name = name;
+        this.productName = productName;
         this.price = price;
         this.stockQuantity = stockQuantity;
         this.productDetail = productDetail;
@@ -41,8 +41,8 @@ public class Product {
         this.price = price;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public void setStockQuantity(long stockQuantity) {
@@ -62,7 +62,7 @@ public class Product {
     }
 
     public String getName() {
-        return name;
+        return productName;
     }
 
     public long getPrice() {
