@@ -1,6 +1,6 @@
-package com.csci318project.onlineordering.repository;
+package onlineordering.customerservice.repository;
 
-import com.csci318project.onlineordering.model.Contact;
+import onlineordering.customerservice.model.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

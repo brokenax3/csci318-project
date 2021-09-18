@@ -1,4 +1,4 @@
-package com.csci318project.onlineordering.model;
+package onlineordering.customerservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

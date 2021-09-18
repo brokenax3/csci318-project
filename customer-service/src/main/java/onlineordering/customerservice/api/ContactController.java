@@ -1,9 +1,9 @@
-package com.csci318project.onlineordering.api;
+package onlineordering.customerservice.api;
 
-import com.csci318project.onlineordering.model.Contact;
-import com.csci318project.onlineordering.model.Customer;
-import com.csci318project.onlineordering.repository.ContactRepository;
-import com.csci318project.onlineordering.repository.CustomerRepository;
+import onlineordering.customerservice.model.Contact;
+import onlineordering.customerservice.model.Customer;
+import onlineordering.customerservice.repository.ContactRepository;
+import onlineordering.customerservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
