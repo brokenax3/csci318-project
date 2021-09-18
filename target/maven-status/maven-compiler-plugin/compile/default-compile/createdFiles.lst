@@ -1,7 +1,0 @@
-com/csci318project/onlineordering/OnlineOrderingApplication.class
-com/csci318project/onlineordering/repository/CustomerRepository.class
-com/csci318project/onlineordering/api/ContactController.class
-com/csci318project/onlineordering/repository/ContactRepository.class
-com/csci318project/onlineordering/model/Contact.class
-com/csci318project/onlineordering/api/CustomerController.class
-com/csci318project/onlineordering/model/Customer.class
