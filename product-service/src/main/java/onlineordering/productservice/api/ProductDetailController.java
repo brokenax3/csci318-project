@@ -5,6 +5,9 @@ import onlineordering.productservice.service.ProductDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RequestMapping("/product/detail")
 @RestController
 public class ProductDetailController {
@@ -17,13 +20,18 @@ public class ProductDetailController {
     }
 
     @PostMapping
-    public ProductDetail addProductDetail(ProductDetail productDetail) {
+    public ProductDetail addProductDetail(@RequestBody ProductDetail productDetail) {
         return productDetailService.addProductDetail(productDetail);
     }
 
+    @GetMapping()
+    public List<ProductDetail> findAllProductDetail() {
+        return productDetailService.findAllProductDetail();
+    }
+
     @GetMapping("{id}")
-    public ProductDetail getProductDetailById(@PathVariable long id) {
-        return productDetailService.getProductDetailById(id);
+    public Optional<ProductDetail> findProductDetailById(@PathVariable long id) {
+        return productDetailService.findProductDetailById(id);
     }
 
     @PutMapping("{id}")

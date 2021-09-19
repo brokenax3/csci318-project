@@ -26,6 +26,7 @@ public class ProductDetail {
     public ProductDetail() {}
 
     public ProductDetail(long id, String description, String comment) {
+        this.id = id;
         this.description = description;
         this.comment = comment;
     }
@@ -34,6 +35,9 @@ public class ProductDetail {
         this.product = product;
     }
 
+    public long getId() {
+        return id;
+    }
     public Product getProduct() {
         return product;
     }

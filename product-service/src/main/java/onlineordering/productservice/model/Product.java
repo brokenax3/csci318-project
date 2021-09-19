@@ -1,7 +1,6 @@
 package onlineordering.productservice.model;
 
 import javax.persistence.*;
-import javax.websocket.OnError;
 
 @Entity
 @Table(name = "Product")
@@ -23,7 +22,7 @@ public class Product {
     @Column(name = "stockQuantity")
     private long stockQuantity;
 
-    @OneToOne(mappedBy = "Product")
+    @OneToOne(mappedBy = "product")
     private ProductDetail productDetail;
 
     public Product() {}
