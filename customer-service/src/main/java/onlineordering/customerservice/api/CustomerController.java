@@ -2,8 +2,7 @@ package onlineordering.customerservice.api;
 
 import onlineordering.customerservice.model.Contact;
 import onlineordering.customerservice.model.Customer;
-import onlineordering.customerservice.repository.ContactRepository;
-import onlineordering.customerservice.repository.CustomerRepository;
+import onlineordering.customerservice.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -14,49 +13,41 @@ import java.util.List;
 @RestController
 public class CustomerController {
 
-    @Autowired
-    private final CustomerRepository customerRepository;
-    private final ContactRepository contactRepository;
+    private final CustomerService customerService;
 
-    public CustomerController(CustomerRepository customerRepository, ContactRepository contactRepository) {
-        this.customerRepository = customerRepository;
-        this.contactRepository = contactRepository;
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
-    @GetMapping()
-    List<Customer> getAllCustomer() {
-        return customerRepository.findAll();
+    @GetMapping
+    public List<Customer> getAllCustomer() {
+        return customerService.getAllCustomer();
     }
 
     @PostMapping
-    Customer addCustomer(@NonNull @RequestBody Customer customer) {
-        return customerRepository.save(customer);
+    public Customer addCustomer(@NonNull @RequestBody Customer customer) {
+        return customerService.addCustomer(customer);
     }
 
     @GetMapping("{id}")
-    Customer getCustomerById(@PathVariable long id) {
-        return customerRepository.findById(id).orElseThrow(RuntimeException::new);
+    public Customer getCustomerById(@PathVariable long id) {
+        return customerService.getCustomerById(id);
     }
 
     @GetMapping(value = "company")
-    List<Customer> getCustomerByCompanyName(@RequestParam("name") String companyName) {
-        return customerRepository.findByCompanyName(companyName);
+    public List<Customer> getCustomerByCompanyName(@RequestParam("name") String companyName) {
+        return customerService.getCustomerByCompanyName(companyName);
     }
 
     @PutMapping("{id}")
-    Customer updateCustomer(@PathVariable long id, @NonNull @RequestBody Customer newCustomer) {
-        Customer customer = customerRepository.findById(id).map(old -> new Customer(id, newCustomer.getCompanyName(), newCustomer.getAddress(), newCustomer.getCountry(), old.getContact()))
-                .orElseThrow(RuntimeException::new);
-        return customerRepository.save(customer);
+    public Customer updateCustomer(@PathVariable long id, @NonNull @RequestBody Customer newCustomer) {
+        return customerService.updateCustomer(id, newCustomer);
     }
 
     @PutMapping("{id}/contact/{contactId}")
-    Customer addCustomerContact(@PathVariable long id, @PathVariable long contactId) {
-        Customer customer = customerRepository.findById(id).orElseThrow(RuntimeException::new);
-        Contact contact = contactRepository.findById(contactId).orElseThrow(RuntimeException::new);
-        customer.setContact(contact);
-        contact.setCustomer(customer);
-        return customerRepository.saveAndFlush(customer);
+    public Customer addCustomerContact(@PathVariable long id, @PathVariable long contactId) {
+        return customerService.addCustomerContact(id, contactId);
     }
 
 }
