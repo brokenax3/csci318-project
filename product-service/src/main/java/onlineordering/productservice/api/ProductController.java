@@ -3,9 +3,11 @@ package onlineordering.productservice.api;
 import onlineordering.productservice.model.Product;
 import onlineordering.productservice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/product")
 @RestController
@@ -29,27 +31,27 @@ public class ProductController {
     }
 
     @GetMapping(path = "{id}")
-    public Product findProductById(@PathVariable("id") long id) {
+    public Optional<Product> findProductById(@PathVariable("id") long id) {
         return productService.findProductById(id);
     }
 
     @DeleteMapping(path = "{id}")
-    public void deleteProductById(@PathVariable("id") long id) {
-        productService.deleteProductById(id);
+    public ResponseEntity<Object> deleteProductById(@PathVariable("id") long id) {
+        return productService.deleteProductById(id);
     }
 
     @PutMapping(value = "product")
-    public Product updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
+    public ResponseEntity<Object> updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
         return productService.updateStock(productName, quantity);
     }
 
     @PutMapping(path = "{id}")
-    public Product updateProductById(@PathVariable("id") long id, @RequestBody Product product) {
+    public ResponseEntity<Object> updateProductById(@PathVariable("id") long id, @RequestBody Product product) {
         return productService.updateProductById(id, product);
     }
 
     @PutMapping(path = "{id}/detail/{productId}")
-    Product addProductDetail(@PathVariable long id, @PathVariable long productId) {
+    public ResponseEntity<Object> addProductDetail(@PathVariable long id, @PathVariable long productId) {
         return productService.addProductDetail(id, productId);
     }
 }

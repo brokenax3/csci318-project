@@ -3,6 +3,7 @@ package onlineordering.productservice.api;
 import onlineordering.productservice.model.ProductDetail;
 import onlineordering.productservice.service.ProductDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,13 +36,13 @@ public class ProductDetailController {
     }
 
     @PutMapping("{id}")
-    public ProductDetail updateProductDetailById(@PathVariable long id, @RequestBody ProductDetail productDetail) {
+    public ResponseEntity<Object> updateProductDetailById(@PathVariable long id, @RequestBody ProductDetail productDetail) {
         return productDetailService.updateProductDetailById(id, productDetail);
     }
 
     @DeleteMapping("{id}")
-    public void deleteProductDetailById(@PathVariable long id) {
-        productDetailService.deleteProductDetailById(id);
+    public ResponseEntity<Object> deleteProductDetailById(@PathVariable long id) {
+        return productDetailService.deleteProductDetailById(id);
     }
 
 }

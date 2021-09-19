@@ -1,8 +1,12 @@
 package onlineordering.productservice.service;
 
 import onlineordering.productservice.model.ProductDetail;
+import onlineordering.productservice.model.ProductDetailNotFoundException;
+import onlineordering.productservice.model.ProductNotFoundException;
 import onlineordering.productservice.repository.ProductDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,12 +33,17 @@ public class ProductDetailService {
         return productDetailRepository.findById(id);
     }
 
-    public void deleteProductDetailById(long id) {
+    public ResponseEntity<Object> deleteProductDetailById(long id) {
+        productDetailRepository.findById(id).orElseThrow(ProductDetailNotFoundException::new);
         productDetailRepository.deleteById(id);
+
+        return new ResponseEntity<>("Product detail is deleted", HttpStatus.OK);
     }
 
-    public ProductDetail updateProductDetailById(long id, ProductDetail productDetail) {
-        return productDetailRepository.findById(id).map(old -> new ProductDetail(id, productDetail.getDescription(), productDetail.getComment()))
-                .orElseThrow(RuntimeException::new);
+    public ResponseEntity<Object> updateProductDetailById(long id, ProductDetail productDetail) {
+        productDetailRepository.findById(id).map(old -> new ProductDetail(id, productDetail.getDescription(), productDetail.getComment()))
+                .orElseThrow(ProductNotFoundException::new);
+
+        return new ResponseEntity<>("Product detail is updated", HttpStatus.OK);
     }
 }
