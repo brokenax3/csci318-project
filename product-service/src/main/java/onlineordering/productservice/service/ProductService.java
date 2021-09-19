@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,33 +45,31 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public ResponseEntity<Object> updateStock(String productName, long quantity) {
+    public Product updateStock(String productName, long quantity) {
         Product product = productRepository.findByProductName(productName)
                 .orElseThrow(ProductNotFoundException::new);
         product.setStockQuantity(quantity);
-        productRepository.save(product);
 
-        return new ResponseEntity<>("Product quantity is updated successfully", HttpStatus.OK);
+        return productRepository.save(product);
     }
 
-    public ResponseEntity<Object> updateProductById(long id, Product product) {
+    public Product updateProductById(long id, Product product) {
 
         Product updatedProduct = productRepository.findById(id).map(old -> new Product(id, product.getProductCategory(), product.getName(),
                 product.getPrice(), product.getStockQuantity(), product.getProductDetail())).orElseThrow(ProductNotFoundException::new);
 
-        return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
+        return productRepository.save(updatedProduct);
     }
 
-    public ResponseEntity<Object> addProductDetail(long id, long productId) {
+    public Product addProductDetail(long id, long productId) {
 
         Product product = productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
         ProductDetail productDetail = productDetailRepository.findById(productId).orElseThrow(ProductDetailNotFoundException::new);
 
         product.setProductDetail(productDetail);
         productDetail.setProduct(product);
-        productRepository.save(product);
         productDetailRepository.save(productDetail);
 
-        return new ResponseEntity<>("Product detail linked to Product successfully", HttpStatus.OK);
+        return productRepository.save(product);
     }
 }

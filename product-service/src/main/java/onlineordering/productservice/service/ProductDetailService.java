@@ -40,10 +40,10 @@ public class ProductDetailService {
         return new ResponseEntity<>("Product detail is deleted", HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> updateProductDetailById(long id, ProductDetail productDetail) {
-        productDetailRepository.findById(id).map(old -> new ProductDetail(id, productDetail.getDescription(), productDetail.getComment()))
+    public ProductDetail updateProductDetailById(long id, ProductDetail productDetail) {
+        ProductDetail updatedProductDetail = productDetailRepository.findById(id).map(old -> new ProductDetail(id, productDetail.getDescription(), productDetail.getComment()))
                 .orElseThrow(ProductNotFoundException::new);
 
-        return new ResponseEntity<>("Product detail is updated", HttpStatus.OK);
+        return productDetailRepository.save(updatedProductDetail);
     }
 }

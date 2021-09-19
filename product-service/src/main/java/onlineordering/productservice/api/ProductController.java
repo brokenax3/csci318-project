@@ -41,17 +41,17 @@ public class ProductController {
     }
 
     @PutMapping(value = "product")
-    public ResponseEntity<Object> updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
+    public Product updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
         return productService.updateStock(productName, quantity);
     }
 
     @PutMapping(path = "{id}")
-    public ResponseEntity<Object> updateProductById(@PathVariable("id") long id, @RequestBody Product product) {
+    public Product updateProductById(@PathVariable("id") long id, @RequestBody Product product) {
         return productService.updateProductById(id, product);
     }
 
     @PutMapping(path = "{id}/detail/{productId}")
-    public ResponseEntity<Object> addProductDetail(@PathVariable long id, @PathVariable long productId) {
+    public Product addProductDetail(@PathVariable long id, @PathVariable long productId) {
         return productService.addProductDetail(id, productId);
     }
 }
