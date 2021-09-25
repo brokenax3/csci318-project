@@ -46,6 +46,7 @@ public class ProductService {
     }
 
     public Product updateStock(String productName, Product product) {
+
         Product newProduct = productRepository.findByProductName(productName)
                 .orElseThrow(ProductNotFoundException::new);
         newProduct.setStockQuantity(product.getStockQuantity());
@@ -71,5 +72,9 @@ public class ProductService {
         productDetailRepository.save(productDetail);
 
         return productRepository.save(product);
+    }
+
+    public Product findAllProductByName(String productName) {
+        return productRepository.findByProductName(productName).orElseThrow(ProductNotFoundException::new);
     }
 }

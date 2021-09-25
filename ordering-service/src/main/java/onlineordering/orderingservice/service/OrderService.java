@@ -57,7 +57,7 @@ public class OrderService {
         String output = "Customer Address : " + customerAddress + "\n"
                 + "Customer Contact : " + customerPhone + "\n";
 
-        String URI_PRODUCT_ID = "http://localhost:8080/product?name=" + productName;
+        String URI_PRODUCT_ID = "http://localhost:8080/product/find?name=" + productName;
 
         ResponseEntity<String> checkInventory;
         long stockQuantity;
@@ -71,10 +71,10 @@ public class OrderService {
             productPrice = Long.parseLong(rootProduct.path("price").toString());
             stockQuantity = Long.parseLong(rootProduct.path("stockQuantity").toString());
 
-            if (stockQuantity - order.getQuantity() <= 0) return new ResponseEntity<>(output + "Not Enough Stock", HttpStatus.OK);
+            if (stockQuantity - order.getQuantity() <= 0) return new ResponseEntity<>(output + "Not Enough Stock" + "\n", HttpStatus.OK);
 
         } catch (HttpClientErrorException e) {
-            return new ResponseEntity<>(output + "Out of Stock", HttpStatus.OK);
+            return new ResponseEntity<>(output + "Product Not Found" + "\n" , HttpStatus.NOT_FOUND);
         }
 
         OrderEvent orderEvent = new OrderEvent(order.getProductName(), order.getQuantity(), stockQuantity, productPrice);
@@ -85,6 +85,6 @@ public class OrderService {
 
         output = output + "Unit Price : " + productPrice + "\n" + "Unit(s) Ordered : " + order.getQuantity() + "\n";
 
-        return new ResponseEntity<>(output + "Order Success", HttpStatus.OK);
+        return new ResponseEntity<>(output + "Order Success" + "\n", HttpStatus.OK);
     }
 }
