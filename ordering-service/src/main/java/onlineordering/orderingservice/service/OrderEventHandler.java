@@ -1,6 +1,5 @@
 package onlineordering.orderingservice.service;
 
-import onlineordering.orderingservice.model.Order;
 import onlineordering.orderingservice.model.OrderEvent;
 import onlineordering.orderingservice.repository.OrderEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
