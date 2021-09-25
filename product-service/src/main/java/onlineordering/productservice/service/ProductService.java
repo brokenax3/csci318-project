@@ -45,12 +45,12 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product updateStock(String productName, long quantity) {
-        Product product = productRepository.findByProductName(productName)
+    public Product updateStock(String productName, Product product) {
+        Product newProduct = productRepository.findByProductName(productName)
                 .orElseThrow(ProductNotFoundException::new);
-        product.setStockQuantity(quantity);
+        newProduct.setStockQuantity(product.getStockQuantity());
 
-        return productRepository.save(product);
+        return productRepository.save(newProduct);
     }
 
     public Product updateProductById(long id, Product product) {

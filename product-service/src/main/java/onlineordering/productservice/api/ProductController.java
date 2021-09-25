@@ -40,9 +40,9 @@ public class ProductController {
         return productService.deleteProductById(id);
     }
 
-    @PutMapping(value = "product")
-    public Product updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
-        return productService.updateStock(productName, quantity);
+    @PutMapping(value = "update")
+    public Product updateStock(@RequestParam("name") String productName, @RequestBody Product product) {
+        return productService.updateStock(productName, product);
     }
 
     @PutMapping(path = "{id}")
