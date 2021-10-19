@@ -45,12 +45,13 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product updateStock(String productName, long quantity) {
-        Product product = productRepository.findByProductName(productName)
-                .orElseThrow(ProductNotFoundException::new);
-        product.setStockQuantity(quantity);
+    public Product updateStock(String productName, Product product) {
 
-        return productRepository.save(product);
+        Product newProduct = productRepository.findByProductName(productName)
+                .orElseThrow(ProductNotFoundException::new);
+        newProduct.setStockQuantity(product.getStockQuantity());
+
+        return productRepository.save(newProduct);
     }
 
     public Product updateProductById(long id, Product product) {
@@ -71,5 +72,9 @@ public class ProductService {
         productDetailRepository.save(productDetail);
 
         return productRepository.save(product);
+    }
+
+    public Product findAllProductByName(String productName) {
+        return productRepository.findByProductName(productName).orElseThrow(ProductNotFoundException::new);
     }
 }

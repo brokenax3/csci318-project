@@ -35,14 +35,19 @@ public class ProductController {
         return productService.findProductById(id);
     }
 
+    @GetMapping(value = "/find")
+    public Product findProductByName(@RequestParam("name") String productName) {
+        return productService.findAllProductByName(productName);
+    }
+
     @DeleteMapping(path = "{id}")
     public ResponseEntity<Object> deleteProductById(@PathVariable("id") long id) {
         return productService.deleteProductById(id);
     }
 
-    @PutMapping(value = "product")
-    public Product updateStock(@RequestParam("productName") String productName, @RequestBody long quantity) {
-        return productService.updateStock(productName, quantity);
+    @PutMapping(value = "update")
+    public Product updateStock(@RequestParam("name") String productName, @RequestBody Product product) {
+        return productService.updateStock(productName, product);
     }
 
     @PutMapping(path = "{id}")
