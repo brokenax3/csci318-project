@@ -7,6 +7,8 @@ import onlineordering.customerservice.model.CustomerNotFoundException;
 import onlineordering.customerservice.repository.ContactRepository;
 import onlineordering.customerservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,5 +54,11 @@ public class CustomerService {
         customer.setContact(contact);
         contact.setCustomer(customer);
         return customerRepository.save(customer);
+    }
+
+    public ResponseEntity<Object> deleteAllCustomer() {
+        customerRepository.deleteAll();
+
+        return new ResponseEntity<>("All Customer is deleted", HttpStatus.OK);
     }
 }

@@ -59,4 +59,9 @@ public class ContactService {
 
         return contactRepository.save(updatedContact);
     }
+
+    public ResponseEntity<Object> deleteAllContact() {
+        contactRepository.deleteAll();
+        return new ResponseEntity<>("All Contact is deleted", HttpStatus.OK);
+    }
 }

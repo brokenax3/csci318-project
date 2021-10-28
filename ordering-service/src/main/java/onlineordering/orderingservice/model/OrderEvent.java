@@ -3,6 +3,7 @@ package onlineordering.orderingservice.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "OrderEvent")
 public class OrderEvent {
 
     @Id

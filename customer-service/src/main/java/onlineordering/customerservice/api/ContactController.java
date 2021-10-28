@@ -43,6 +43,11 @@ public class ContactController {
         return contactService.deleteContactById(id);
     }
 
+    @DeleteMapping
+    public ResponseEntity<Object> deleteAllContact() {
+        return contactService.deleteAllContact();
+    }
+
     @PutMapping("{id}")
     public Contact updateContactById(@PathVariable long id, @RequestBody Contact contact) {
         return contactService.updateContactById(id, contact);

@@ -4,6 +4,7 @@ import onlineordering.customerservice.model.Contact;
 import onlineordering.customerservice.model.Customer;
 import onlineordering.customerservice.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +49,11 @@ public class CustomerController {
     @PutMapping("{id}/contact/{contactId}")
     public Customer addCustomerContact(@PathVariable long id, @PathVariable long contactId) {
         return customerService.addCustomerContact(id, contactId);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Object> deleteAllCustomer() {
+        return customerService.deleteAllCustomer();
     }
 
 }
