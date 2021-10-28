@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81f88c8b-26f9-4413-ae55-54109abb65d6" name="Changes" comment="" />
+    <list default="true" id="81f88c8b-26f9-4413-ae55-54109abb65d6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/service/ProductService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,10 +51,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.49539876" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="onlineordering.customerservice" />
       <recent name="onlineordering.orderingservice" />
     </key>
   </component>
@@ -57,7 +67,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.OrderingServiceApplication">
+  <component name="RunManager" selected="Application.ProductServiceApplication">
     <configuration name="CustomerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="onlineordering.customerservice.CustomerServiceApplication" />
       <module name="customer-service" />
@@ -99,9 +109,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OrderingServiceApplication" />
-        <item itemvalue="Application.CustomerServiceApplication" />
         <item itemvalue="Application.ProductServiceApplication" />
+        <item itemvalue="Application.CustomerServiceApplication" />
+        <item itemvalue="Application.OrderingServiceApplication" />
       </list>
     </recent_temporary>
   </component>

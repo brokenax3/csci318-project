@@ -60,7 +60,7 @@ public class Product {
         return productCategory;
     }
 
-    public String getName() {
+    public String getProductName() {
         return productName;
     }
 

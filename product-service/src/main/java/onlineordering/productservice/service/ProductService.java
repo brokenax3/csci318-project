@@ -56,7 +56,7 @@ public class ProductService {
 
     public Product updateProductById(long id, Product product) {
 
-        Product updatedProduct = productRepository.findById(id).map(old -> new Product(id, product.getProductCategory(), product.getName(),
+        Product updatedProduct = productRepository.findById(id).map(old -> new Product(id, product.getProductCategory(), product.getProductName(),
                 product.getPrice(), product.getStockQuantity(), product.getProductDetail())).orElseThrow(ProductNotFoundException::new);
 
         return productRepository.save(updatedProduct);
