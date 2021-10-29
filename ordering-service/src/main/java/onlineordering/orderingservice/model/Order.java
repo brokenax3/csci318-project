@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
-// @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "Order_table")
 public class Order {
@@ -34,18 +34,6 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public void setSupplier(String supplier) {
-        this.supplier = supplier;
-    }
-
-    public void setProduct(String product) {
-        this.productName = product;
-    }
-
-    public void setQuantity(long quantity) {
-        this.quantity = quantity;
-    }
-
     public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
@@ -70,9 +58,6 @@ public class Order {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 }
 
 

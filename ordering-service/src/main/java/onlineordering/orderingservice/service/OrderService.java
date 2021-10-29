@@ -18,7 +18,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -84,7 +83,7 @@ public class OrderService {
             return new ResponseEntity<>(output + "Product Not Found" + "\n" , HttpStatus.NOT_FOUND);
         }
 
-        OrderEvent orderEvent = new OrderEvent(order.getProductName(), order.getQuantity(), stockQuantity, productPrice);
+        OrderEvent orderEvent = new OrderEvent(order.getProductName(), order.getQuantity(), stockQuantity, productPrice, customerId);
         order.setCustomerId(customerId);
 
         publisher.publishEvent(orderEvent);

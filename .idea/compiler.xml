@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bi-service" />
+        <module name="product-service" />
         <module name="customer-service" />
         <module name="ordering-service" />
-        <module name="product-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bi-service" target="1.8" />
       <module name="customer-service" target="1.8" />
       <module name="ordering-service" target="1.8" />
       <module name="product-service" target="1.8" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bi-service" options="-parameters" />
       <module name="customer-service" options="-parameters" />
       <module name="ordering-service" options="-parameters" />
       <module name="product-service" options="-parameters" />

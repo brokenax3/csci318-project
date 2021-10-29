@@ -4,15 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81f88c8b-26f9-4413-ae55-54109abb65d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductRunner.java" afterDir="false" />
+    <list default="true" id="81f88c8b-26f9-4413-ae55-54109abb65d6" name="Changes" comment="Implemented CustomerRunner and OrderRunner to create Customers on start.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_luben_zstd_jni_1_4_5_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jodah_typetools_0_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_lz4_lz4_java_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_rocksdb_rocksdbjni_5_18_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_function_context_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_function_core_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_core_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_stream_binder_kafka_streams_3_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_core_5_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_jmx_5_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_kafka_5_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/BiServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/api/BIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/model/OrderEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderInteractiveQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderStreamProcessing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-service/src/test/java/onlineordering/biservice/BiserviceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordering-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/CustomerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/api/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/onlineordering/customerservice/api/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/model/OrderEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/model/OrderEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,16 +85,20 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="207nVxRfANj8DnmFq2LIk8kcdgl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/product-service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bi-service" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.49539876" />
@@ -67,7 +118,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ProductServiceApplication">
+  <component name="RunManager" selected="Application.OrderingServiceApplication">
     <configuration name="CustomerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="onlineordering.customerservice.CustomerServiceApplication" />
       <module name="customer-service" />
@@ -107,11 +158,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in customer-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OrderingServiceApplication" />
         <item itemvalue="Application.ProductServiceApplication" />
         <item itemvalue="Application.CustomerServiceApplication" />
-        <item itemvalue="Application.OrderingServiceApplication" />
+        <item itemvalue="JUnit.All in customer-service" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +184,14 @@
       <option name="presentableId" value="Default" />
       <updated>1635404520489</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implemented CustomerRunner and OrderRunner to create Customers on start.">
+      <created>1635439055519</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635439055519</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -225,6 +293,12 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Implemented ProductRunner to create Products on start." />
+    <MESSAGE value="Implemented CustomerRunner and OrderRunner to create Customers on start." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented CustomerRunner and OrderRunner to create Customers on start." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,10 +1,7 @@
 package onlineordering.customerservice.api;
 
 import onlineordering.customerservice.model.Contact;
-import onlineordering.customerservice.model.ContactNotFoundException;
-import onlineordering.customerservice.model.Customer;
 import onlineordering.customerservice.service.ContactService;
-import onlineordering.customerservice.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

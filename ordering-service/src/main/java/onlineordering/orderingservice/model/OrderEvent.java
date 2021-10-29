@@ -22,13 +22,17 @@ public class OrderEvent {
     @Column(name="productPrice")
     private long productPrice;
 
+    @Column(name="customerId")
+    private long customerId;
+
     public OrderEvent() {}
 
-    public OrderEvent(String productName, long orderQuantity, long stockQuantity, long productPrice){
+    public OrderEvent(String productName, long orderQuantity, long stockQuantity, long productPrice, long customerId){
         this.productName = productName;
         this.orderQuantity = orderQuantity;
         this.stockQuantity = stockQuantity;
         this.productPrice = productPrice;
+        this.customerId = customerId;
     }
 
     public long getId() { return id; }
@@ -65,5 +69,13 @@ public class OrderEvent {
 
     public void setStockQuantity(long stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    public long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
     }
 }
