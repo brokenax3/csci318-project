@@ -27,13 +27,13 @@ public class OrderController {
     }
 
     @GetMapping("{orderId}/customer")
-    public ResponseEntity<String> findCustomerByOrder(@PathVariable long orderId) {
-        return orderService.findCustomerByOrder(orderId);
+    public ResponseEntity<String> findCustomerByOrderId(@PathVariable long orderId) {
+        return orderService.findCustomerByOrderId(orderId);
     }
 
     @GetMapping("{orderId}/product")
-    public ResponseEntity<String> findProductByOrder(@PathVariable long orderId) {
-        return orderService.findProductByOrder(orderId);
+    public ResponseEntity<String> findProductByOrderId(@PathVariable long orderId) {
+        return orderService.findProductByOrderId(orderId);
     }
 
     @GetMapping

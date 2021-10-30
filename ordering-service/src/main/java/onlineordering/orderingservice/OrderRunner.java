@@ -51,7 +51,7 @@ public class OrderRunner implements CommandLineRunner {
             }
 
             // Order every 10 seconds
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         }
     }
 }

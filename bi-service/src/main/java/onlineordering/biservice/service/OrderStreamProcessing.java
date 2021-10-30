@@ -57,7 +57,7 @@ public class OrderStreamProcessing {
                 return KeyValue.pair(productName, orderQuantity);
             });
 
-            testStream.print(Printed.<String, Long>toSysOut().withLabel("Test"));
+//            testStream.print(Printed.<String, Long>toSysOut().withLabel("Test"));
 
             // Map product and quantity into a KTable
             KTable<String, Double> orderQuantityKTable = inputStream.map((key, value) -> {

@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81f88c8b-26f9-4413-ae55-54109abb65d6" name="Changes" comment="Implemented CustomerRunner and OrderRunner to create Customers on start.">
-      <change afterPath="$PROJECT_DIR$/bi-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/BiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/BiServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/api/BIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/api/CustomerOrderQueryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/model/OrderEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/model/OrderEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderInteractiveQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderInteractiveQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderStreamProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/bi-service/src/main/java/onlineordering/biservice/service/OrderStreamProcessing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/OrderRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/onlineordering/productservice/ProductRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/api/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/api/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/java/onlineordering/orderingservice/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ordering-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +51,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-cloud-kafka" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.49539876" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -138,9 +136,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.OrderingServiceApplication" />
-        <item itemvalue="Application.BiServiceApplication" />
         <item itemvalue="Application.ProductServiceApplication" />
         <item itemvalue="Application.CustomerServiceApplication" />
+        <item itemvalue="Application.BiServiceApplication" />
         <item itemvalue="JUnit.All in customer-service" />
       </list>
     </recent_temporary>

@@ -96,7 +96,7 @@ public class OrderService {
         return new ResponseEntity<>(output + "Order Success" + "\n", HttpStatus.OK);
     }
 
-    public ResponseEntity<String> findCustomerByOrder(long orderId) {
+    public ResponseEntity<String> findCustomerByOrderId(long orderId) {
         Order order = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
 
         String URI_CUSTOMER_ID = "http://localhost:8082/customer/" + order.getCustomerId().toString();
@@ -113,7 +113,7 @@ public class OrderService {
         return customerDetails;
     }
 
-    public ResponseEntity<String> findProductByOrder(long orderId) {
+    public ResponseEntity<String> findProductByOrderId(long orderId) {
         Order order = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
 
         String productName = order.getProductName();
