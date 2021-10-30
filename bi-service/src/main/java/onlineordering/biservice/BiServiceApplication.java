@@ -18,8 +18,8 @@ public class BiServiceApplication {
 		SpringApplication.run(BiServiceApplication.class, args);
 	}
 
-	@Bean
-	public Consumer<OrderEvent> consume() {
-		return input -> logger.info(input.toString());
-	}
+//	@Bean
+//	public Consumer<OrderEvent> consume() {
+//		return input -> logger.info(input.toString());
+//	}
 }

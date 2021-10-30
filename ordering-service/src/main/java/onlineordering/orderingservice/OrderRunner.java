@@ -32,10 +32,10 @@ public class OrderRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         while (!Thread.currentThread().isInterrupted()) {
             // Select a random CustomerId
-            int customerSel = new Random().nextInt(4) + 6;
+            int customerSel = new Random().nextInt(5) + 6;
             // Select a random Product and Quantity
-            int productSel = new Random().nextInt(4);
-            int quantity = new Random().nextInt(10) + 1;
+            int productSel = new Random().nextInt(5);
+            int quantity = new Random().nextInt(11) + 1;
 
             // Make Request Body
             Map<String, String> paramsOrder = new HashMap<>();
@@ -49,7 +49,9 @@ public class OrderRunner implements CommandLineRunner {
             } catch (HTTPException e) {
                 logger.info(String.valueOf(e));
             }
-            Thread.sleep(5000);
+
+            // Order every 10 seconds
+            Thread.sleep(10000);
         }
     }
 }

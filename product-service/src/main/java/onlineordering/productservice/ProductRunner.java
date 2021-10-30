@@ -36,8 +36,8 @@ public class ProductRunner implements CommandLineRunner {
             Map<String, String> paramsProduct = new HashMap<String, String >();
             paramsProduct.put("productCategory", "Confectionery");
             paramsProduct.put("productName", flavour[i] + " Cookie");
-            paramsProduct.put("price", Integer.toString(new Random().nextInt(5) + 5));
-            paramsProduct.put("stockQuantity", "100");
+            paramsProduct.put("price", "2");
+            paramsProduct.put("stockQuantity", "10000");
 
             try {
                 ResponseEntity<String> response = restTemplate.postForEntity(URI_PRODUCT, paramsProduct, String.class);

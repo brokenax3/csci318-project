@@ -3,19 +3,19 @@ package onlineordering.biservice.model;
 public class OrderEvent {
 
     private String productName;
-    private String customerId;
-    private String quantity;
-    private String price;
+    private long customerId;
+    private long orderQuantity;
+    private long productPrice;
 
-    public OrderEvent() {
-    }
+    public OrderEvent() {}
 
-    public OrderEvent(String productName, String customerId, String quantity, String price) {
+    public OrderEvent(String productName, long customerId, long orderQuantity, long productPrice) {
         this.productName = productName;
         this.customerId = customerId;
-        this.quantity = quantity;
-        this.price = price;
+        this.orderQuantity = orderQuantity;
+        this.productPrice = productPrice;
     }
+
 
     public String getProductName() {
         return productName;
@@ -25,27 +25,27 @@ public class OrderEvent {
         this.productName = productName;
     }
 
-    public String getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
 
-    public String getQuantity() {
-        return quantity;
+    public long getOrderQuantity() {
+        return orderQuantity;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setOrderQuantity(long orderQuantity) {
+        this.orderQuantity = orderQuantity;
     }
 
-    public String getPrice() {
-        return price;
+    public long getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setProductPrice(long productPrice) {
+        this.productPrice = productPrice;
     }
 }
