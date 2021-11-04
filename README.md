@@ -1,5 +1,6 @@
 ---
 title: CSCI318 - Task 3
+author: Mark Cai Yee Lee 6143611
 mainfont: IBMPlexSerif
 monofont: Iosevka SS02
 ---
@@ -34,6 +35,21 @@ cd ../bi-service && mvn compile && mvn package
 ```
 
 ## Running
+First, Apache Kafka is required to run the application. In this case, the binary download from `https://kafka.apache.org/downloads` is used. 
+
+This version is used `https://archive.apache.org/dist/kafka/2.8.1/kafka_2.13-2.8.1.tgz`.
+
+Next, extract the downloaded tar file and start Apache Kafka. In separate terminal emulators, 
+```bash
+# Command One
+cd kafka_2.13-2.8.0
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# In another terminal
+cd kafka_2.13-2.8.0
+/bin/kafka-server-start.sh config/server.properties
+```
+
 ```bash
 java -jar customer-service-0.0.1-SNAPSHOT.jar
 java -jar product-service-0.0.1-SNAPSHOT.jar
